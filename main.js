@@ -6,14 +6,16 @@ let messages = [
   "Dê toda a atenção á formação dos seus filhos, sobretudo com bons exemplos da sua própria vida."
 ];
 
-let randomNumber = Math.round(Math.random() * messages.length);
+let randomNumber = Math.floor(Math.random() * messages.length);
 let randomMessage = messages[randomNumber];
 
 const screen1 = document.querySelector(".screen1");
 const screen2 = document.querySelector(".screen2");
+const messageElement = document.querySelector(".screen2 p");
+messageElement.innerText = randomMessage;
+
 const imgCookie = document.querySelector("#img-cookie");
 const btnOpenOtherCookie = document.querySelector("#btnOpenOtherCookie");
-document.querySelector(".screen2 p").innerText = `${randomMessage}`;
 
 imgCookie.addEventListener('mousedown', handleOpenCookie);
 
@@ -25,7 +27,7 @@ function toggleScreen() {
 }
 
 function handleOpenCookie(e) {
-  if(e.buttons == 1) {
+  if (e.buttons === 1) {
     toggleScreen();
   }
 }
@@ -33,7 +35,7 @@ function handleOpenCookie(e) {
 function handleOpenOtherCookie() {
   toggleScreen();
   
-  randomNumber = Math.round(Math.random() * messages.length);
+  randomNumber = Math.floor(Math.random() * messages.length);
   randomMessage = messages[randomNumber];
-  document.querySelector(".screen2 p").innerText = `${randomMessage}`;
+  messageElement.innerText = randomMessage;
 }
