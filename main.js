@@ -32,6 +32,7 @@ function handleOpenCookie(e) {
 
 function handleOpenOtherCookie() {
   toggleScreen();
+  
   randomNumber = Math.round(Math.random() * messages.length);
   randomMessage = messages[randomNumber];
   document.querySelector(".screen2 p").innerText = `${randomMessage}`;
