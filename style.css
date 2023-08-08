@@ -100,8 +100,8 @@ h1 {
   background: #d87f03; 
 }
 
-.vibrate-1 {
-  animation: vibrate-1 0.3s linear infinite both;
+.vibrate {
+  animation: vibrate 0.2s linear infinite both;
 }
 
 @keyframes gradient {
@@ -116,7 +116,7 @@ h1 {
 	}
 }
 
-@keyframes vibrate-1 {
+@keyframes vibrate {
   0% {
     -webkit-transform: translate(0);
             transform: translate(0);
@@ -142,4 +142,19 @@ h1 {
             transform: translate(0);
   }
 }
+
+.growAnimation {
+	animation: growAnimation 2s;
+}
+
+@keyframes growAnimation {
+  0% {
+    transform: translateY(180%) scale(0.1);
+  }
+
+  100% {
+    transform: translateY(0%) scale(1);
+  }
+}
+
 
